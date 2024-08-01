@@ -1,20 +1,18 @@
-import { useState } from 'react'
+
 import './App.css'
 import Product from './product'
+import {useDispatch } from 'react-redux'
 import data from './product.json'
 import { getProducts } from './redux/productSlice'
-import {useDispatch } from 'react-redux'
-
 function App() {
+
 const dispatch = useDispatch()
 dispatch(getProducts(data))
 return (
-
-    <div className='products'>
+  <div className='products'>
         <Product/>
-       </div>
-    
-  )
+      </div>
+ ) 
 }
 
 export default App

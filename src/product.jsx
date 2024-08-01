@@ -1,17 +1,16 @@
 import './App.css'
 import {useDispatch, useSelector } from 'react-redux'
-import { addOuantity, decOuantity, removeProd } from './redux/productSlice.js'
-import { useState } from 'react'
+import {addQuantity, decQuantity, removeProd } from './redux/productSlice.js'
 
 function Product(){
-
-const products = useSelector(state => state.product.products)
 const dispatch = useDispatch()
+const products = useSelector(state => state.product.products)
+
 const removeClick = (id) =>{
-  dispatch(decOuantity(id))
+  dispatch(decQuantity(id))
 }
 const addClick  = (id) =>{
-    dispatch(addOuantity(id))
+    dispatch(addQuantity(id))
 }
 const removeProduct = (id)=>{
     dispatch(removeProd(id))

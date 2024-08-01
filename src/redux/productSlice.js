@@ -9,14 +9,14 @@ const productSlice=createSlice({
        getProducts:(state,action)=>{
             state.products = action.payload
     },
-    addOuantity:(state,action)=>{
+    addQuantity:(state,action)=>{
         const index = state.products.findIndex((product)=> product.id == action.payload)
         console.log(index)
         const item = state.products[index]
         console.log(item.quantity)
         item.quantity +=1
     },
-    decOuantity:(state,action)=>{
+    decQuantity:(state,action)=>{
         const index = state.products.findIndex((product)=> product.id == action.payload)
         const item = state.products[index]
         if(item.quantity > 1)
@@ -29,5 +29,5 @@ const productSlice=createSlice({
         state.products.splice(index,1)
      }
 }})
-export const {getProducts,addOuantity,decOuantity,removeProd} = productSlice.actions;
+export const {getProducts,addQuantity,decQuantity,removeProd} = productSlice.actions;
 export default productSlice.reducer
