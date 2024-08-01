@@ -1,6 +1,6 @@
 import './App.css'
 import {useDispatch, useSelector } from 'react-redux'
-import { addOuantity, decOuantity } from './redux/productSlice'
+import { addOuantity, decOuantity, removeProd } from './redux/productSlice'
 import { useState } from 'react'
 
 function Product(){
@@ -13,7 +13,9 @@ const removeClick = (id) =>{
 const addClick  = (id) =>{
     dispatch(addOuantity(id))
 }
-
+const removeProduct = (id)=>{
+    dispatch(removeProd(id))
+}
 const total = products.reduce((acc,item)=> acc+( item.price * item.quantity),0)
    return(
      <> 
@@ -38,7 +40,7 @@ const total = products.reduce((acc,item)=> acc+( item.price * item.quantity),0)
                          <button className='inc-btn' onClick={()=>addClick(product.id)}>+</button>
                         <p className='price'>₹{product.price}</p>
                         </div>
-                    
+                        <p className='remove-btn' onClick={()=>removeProduct(product.id)}>REMOVE</p>
                 </div>
             </div>
               <div className='line'></div>

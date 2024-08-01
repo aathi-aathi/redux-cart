@@ -15,10 +15,6 @@ const productSlice=createSlice({
         const item = state.products[index]
         console.log(item.quantity)
         item.quantity +=1
-        
-
-        
-        
     },
     decOuantity:(state,action)=>{
         const index = state.products.findIndex((product)=> product.id == action.payload)
@@ -26,9 +22,12 @@ const productSlice=createSlice({
         if(item.quantity > 1)
         item.quantity-= 1
     console.log(item.quantity)
-        
-        
-    }
+    },
+     removeProd:(state,action)=>{
+        const index = state.products.findIndex((product)=> product.id == action.payload)
+        const item = state.products[index]
+        state.products.splice(index,1)
+     }
 }})
-export const {getProducts,addOuantity,decOuantity} = productSlice.actions;
+export const {getProducts,addOuantity,decOuantity,removeProd} = productSlice.actions;
 export default productSlice.reducer
