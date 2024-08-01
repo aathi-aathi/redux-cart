@@ -10,8 +10,7 @@ const dispatch = useDispatch()
 dispatch(getProducts(data))
 return (
 
-    
-      <div className='products'>
+    <div className='products'>
         <Product/>
        </div>
     
