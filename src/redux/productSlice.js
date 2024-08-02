@@ -25,7 +25,6 @@ const productSlice=createSlice({
     },
      removeProd:(state,action)=>{
         const index = state.products.findIndex((product)=> product.id == action.payload)
-        const item = state.products[index]
         state.products.splice(index,1)
      }
 }})

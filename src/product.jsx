@@ -1,9 +1,10 @@
 import './App.css'
 import {useDispatch, useSelector } from 'react-redux'
-import {addQuantity, decQuantity, removeProd } from './redux/productSlice.js'
+import {addQuantity, decQuantity, removeProd} from './redux/productSlice.js'
 
 function Product(){
 const dispatch = useDispatch()
+
 const products = useSelector(state => state.product.products)
 
 const removeClick = (id) =>{
