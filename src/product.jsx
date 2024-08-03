@@ -29,7 +29,7 @@ const total = products.reduce((acc,item)=> acc+( item.price * item.quantity),0)
                     <p className='description'>{product.description}</p>
                     <div className='rating'>
                         <p>{product.rating}</p>
-                        <img src='https:cdn-icons-png.flaticon.com/128/9351/9351980.png'/>
+                        <i className ="fa-solid fa-star"></i>
                     </div>
                 </div>
                  </div>
